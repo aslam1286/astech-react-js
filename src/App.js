@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import './my-components/css/style.css';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Hero from './my-components/js/Hero';
+import Header from './my-components/js/Header';
+import Frontpage from './my-components/js/Frontpage';
+import About from './my-components/js/About';
+import Contact from './my-components/js/Contact';
+import Footer from './my-components/js/Footer';
+import Services from './my-components/js/Services';
+import TermsNConditions from './my-components/js/TermsNConditions';
+import PrivacyNPolicy from './my-components/js/PrivacyNPolicy';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+    <Routes>
+        <Route exact path = "/" element= {<Frontpage />} ></Route>
+        <Route exact path = "/about" element ={<About />}></Route>
+        <Route exact path = "/services" element ={<Services />}></Route>
+        <Route exact path = "/contact" element ={<Contact />}></Route>
+        <Route exact path = "/terms-and-conditions" element ={<TermsNConditions />}></Route>
+        <Route exact path = "/privacy-n-policy" element ={<PrivacyNPolicy />}></Route>
+    </Routes>
+    </>
   );
 }
 
